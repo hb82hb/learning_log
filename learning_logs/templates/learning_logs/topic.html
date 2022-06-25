@@ -1,17 +1,18 @@
 {% extends 'learning_logs/base.html' %}
 
+
 {% block content %}
 
-  <p>Topic: {{ topic }}</p>
+  <h3>{{ topic }}</h3>
+  <hr>
 
-  <p>Entries:</p>
   <p>
-    <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
+    <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry to {{topic}}</a>
   </p>
   <ul>
   {% for entry in entries %}
     <li>
-	  <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+      <p>Created {{ entry.date_added|date:'M d, Y H:i' }}</p>
       <p>{{ entry.text|linebreaks }}</p>
       <p>
         <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit entry</a>
@@ -23,3 +24,5 @@
   </ul>
 
 {% endblock content %}
+
+

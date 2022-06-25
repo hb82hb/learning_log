@@ -31,11 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #My apps
+    # My apps
     'learning_logs',
     'users',
 
-    #Default apps
+    # Third party apps
+    'bootstrap4',
+
+    # Default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,5 +130,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#My settings
+# My settings
 LOGIN_URL = 'users:login'
